@@ -12,11 +12,21 @@ public class TicTacToeView {
         
     }
 	
-    public void viewModel() {
+    public void viewModel () {
         
         /* Print the board to the console (see examples) */
         
         /* INSERT YOUR CODE HERE */
+        
+        System.out.println("012");
+        System.out.println("0"+ model.getMark);
+        System.out.println("1"+ model.getMark);
+        System.out.println("2"+ model.getMark);
+
+        
+        
+        
+            
 
     }
 
