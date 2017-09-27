@@ -93,13 +93,13 @@ public class TicTacToeModel{
            empty! */
         
         /* INSERT YOUR CODE HERE */
-        if ((!isSqaureMarked(row, col)) && (isValidSquare(row, col)) && xTurn){
+        if ((!isSquareMarked(row, col)) && (isValidSquare(row, col)) && xTurn){
             grid[row][col].equals(Mark.X);
             xTurn = false;
             return true;
         }
         
-        else if((!isSqaureMarked(row, col)) && (isValidSquare(row, col)) && !xTurn){
+        else if((!isSquareMarked(row, col)) && (isValidSquare(row, col)) && !xTurn){
             grid[row][col].equals(Mark.O);
             xTurn = true;
             return true;
@@ -237,7 +237,7 @@ public class TicTacToeModel{
         /* INSERT YOUR CODE HERE */
         for (int i=0; i<width; i++){
             for (int j=0; j<width; j++){
-                if((!isSqaureMarked(i, j)) || (isMarkWin(grid[i][j]))){
+                if((!isSquareMarked(i, j)) || (isMarkWin(grid[i][j]))){
                     return false;
                 }
             }
