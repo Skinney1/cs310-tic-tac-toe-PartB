@@ -22,12 +22,7 @@ public class TicTacToeView {
         System.out.println("0"+ model.getMark);
         System.out.println("1"+ model.getMark);
         System.out.println("2"+ model.getMark);
-
         
-        
-        
-            
-
     }
 
     public void showNextMovePrompt() {
@@ -35,6 +30,8 @@ public class TicTacToeView {
         /* Display a prompt for the player's next move (see examples) */
 
         /* INSERT YOUR CODE HERE */
+        
+        System.out.println("Player 1: " + model.X + "turn");
 
     }
 

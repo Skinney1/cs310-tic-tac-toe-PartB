@@ -92,8 +92,20 @@ public class TicTacToeModel{
            empty! */
         
         /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
+        if ((!isSqaureMarked(row, col)) && (isValidSquare(row, col)) && xTurn){
+            grid[row][col].equals(Mark.X);
+            xTurn = false;
+            return true;
+        }
+        
+        else if((!isSqaureMarked(row, col)) && (isValidSquare(row, col)) && !xTurn){
+            grid[row][col].equals(Mark.O);
+            xTurn = true;
+            return true;
+        }
+        
+        else
+            return false;
         
     }
 	
