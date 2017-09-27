@@ -41,9 +41,12 @@ public class TicTacToeView {
         /* Display a prompt for the player's next move (see examples) */
 
         /* INSERT YOUR CODE HERE */
-        
-        System.out.println("Player 1: " + model.X + "turn");
-
+        if (model.iXTurn()){
+            System.out.println ("Player 1 ('X') Move:\n" + " Enter the row and column numbers, seperated by a space: ");
+        }
+        else {
+            System.out.println ("Player 2 ('O') Move:\n" + " Enter the row and column numbers, seperated by a space: ");
+        }
     }
 
     public void showInputError() {
@@ -51,7 +54,7 @@ public class TicTacToeView {
         /* Display an error if input is invalid (see examples) */
 
         /* INSERT YOUR CODE HERE */
-
+        System.out.println("Invalid input. Please try again.");
     }
 
     public void showResult(String r) {
