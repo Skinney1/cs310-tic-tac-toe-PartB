@@ -114,8 +114,12 @@ public class TicTacToeModel{
         /* Return true if specified location is within grid bounds */
         
         /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
+        if ((row < width) && (row >= 0) && (col < width) && (col >= 0)){
+            return true;
+        }
+        
+        else 
+            return false;
         
     }
 	
@@ -124,8 +128,7 @@ public class TicTacToeModel{
         /* Return true if square at specified location is marked */
         
         /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
+        return (grid[row][col] != Mark.EMPTY);
             
     }
 	
