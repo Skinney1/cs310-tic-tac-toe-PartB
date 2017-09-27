@@ -235,9 +235,14 @@ public class TicTacToeModel{
         /* Check the squares of the board to see if the game is a tie */
 
         /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
-        
+        for (int i=0; i<width; i++){
+            for (int j=0; j<width; j++){
+                if((!isSqaureMarked(i, j)) || (isMarkWin(grid[i][j]))){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public boolean isGameover(){
