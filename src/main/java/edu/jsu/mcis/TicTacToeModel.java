@@ -79,10 +79,11 @@ public class TicTacToeModel{
         /* Initialize grid by filling every square with empty marks */
 
         /* INSERT YOUR CODE HERE */
-        for(int i=0; i<width; i++)
-            for(int j=0; j<width; j++)
-                grid[i][j] = Mark.EMPTY;   
-        
+        for(int i=0; i<width; i++) {
+            for(int j=0; j<width; j++){
+                grid[i][j] = Mark.EMPTY; 
+            }
+        }
     }
 	
     public boolean makeMark(int row, int col) {
@@ -104,8 +105,9 @@ public class TicTacToeModel{
             return true;
         }
         
-        else
+        else {
             return false;
+        }
         
     }
 	
@@ -118,8 +120,9 @@ public class TicTacToeModel{
             return true;
         }
         
-        else 
+        else {
             return false;
+        }
         
     }
 	
@@ -138,8 +141,6 @@ public class TicTacToeModel{
         
         /* INSERT YOUR CODE HERE */
         return grid[row][col];
-
-        /*return null; /* remove this line! */
             
     }
 	
@@ -150,8 +151,21 @@ public class TicTacToeModel{
            value */
         
         /* INSERT YOUR CODE HERE */
-
-        return null; /* remove this line! */
+        if (isMarkWin(Mark.X)){
+            return Result.X;
+        }
+        
+        else if (isMarkWin(Mark.O)){
+            return Result.O;
+        }
+        
+        else if (isTie()){
+            return Result.TIE;
+        }
+        
+        else {
+            return Result.O;
+        }
 
     }
 	
@@ -161,9 +175,59 @@ public class TicTacToeModel{
            winner */
         
         /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
-
+        boolean win = true;
+        
+        //rows
+        int j;
+        for (int i=0; i<width; i++){
+            win = true;
+            for (j=0; j<width; j++){
+                if (!grid[i][j].equals(mark)){
+                    win = false;
+                }
+            }
+            if(win){
+                return true;
+            }
+        }
+        
+        //columns
+        int k;
+        for (int p=0; p<width; p++){
+            win = true;
+            for (k=0; k<width; k++){
+                if (!grid[k][p].equals(mark)){
+                    win = false;
+                }
+            }
+            if (win){
+                return true;
+            }
+        }
+        
+        //diagonal left to right
+        win = true;
+        for (int v=0; v<width; v++){
+            if (!grid[v][v].equals(mark)){
+                win = false;
+            }
+        }
+        if (win){
+            return true;
+        }
+        
+        //Diagonal right to left
+        win = true;
+        for (int n=0; n<width; n++){
+            if (!grid[n][width-1-n].equals(mark)){
+                win = false;
+            }
+        }
+        if (win){
+            return true;
+        }
+        
+        return false;
     }
 	
     private boolean isTie() {
