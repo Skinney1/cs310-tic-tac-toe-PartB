@@ -87,7 +87,7 @@ public class TicTacToeView extends JPanel implements ActionListener {
            
         /* INSERT CODE HERE */
         if (model.isGameOver()){
-            showResult(model.getResult());
+            showResult(model.getResult().toString());
             for (int x=0; x<model.getWidth(); x++){
                 for (int y=0; y<model.getWidth(); y++){
                     squares[x][y].setEnabled(false);
@@ -104,6 +104,11 @@ public class TicTacToeView extends JPanel implements ActionListener {
            by "getMark()" (to update the View to match the Model) */
            
         /* INSERT CODE HERE */
+        for (int x=0; x<model.getWidth(); x++){
+            for (int y=0; y<model.getWidth(); y++){
+                squares[x][y].setText(model.getMark(x, y).toString());
+            }
+        }
 
     }
         
